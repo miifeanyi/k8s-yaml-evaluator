@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-service
+  labels:
+    app: api-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-service
+  template:
+    metadata:
+      labels:
+        app: api-service
+        # NOTE: selector matches, so this one is structurally fine.
+        # The failures below are image / resources / security / probes.
+    spec:
+      automountServiceAccountToken: true
+      containers:
+        - name: api
+          image: registry.example.com/api:latest
+          ports:
+            - containerPort: 8080
+          # No resources.requests or resources.limits
+          # No livenessProbe, no readinessProbe
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
+            readOnlyRootFilesystem: false
+            capabilities:
+              add:
+                - SYS_ADMIN
