@@ -31,7 +31,7 @@ Each finding has a severity (`FAIL` / `WARN` / `PASS`), a location, and a plain-
 
 ## Why I built this
 
-I do production GKE support work, and in October 2026 I worked for Mercor as an Odin Writer (Generalist) — creating research questions, answers, and evaluation materials to train LLMs. For my Odin task I recorded a workflow I know well: analysing Kubernetes manifest files and picking the correct one for deployment, explaining my reasoning on screen. It passed quality review.
+I do production GKE support work, and in October 2026 I worked for Mercor as an AI Generalist — creating research questions, answers, and evaluation materials to train LLMs. For my Mercor task I recorded a workflow I know well: analysing Kubernetes manifest files and picking the correct one for deployment, explaining my reasoning on screen. It passed quality review.
 
 This repo is the sanitized, runnable version of that rubric — the same checks I was applying by hand, now as a script I can run, test, and defend in an interview.
 
